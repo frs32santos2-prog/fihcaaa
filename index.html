@@ -1,135 +1,156 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Ficha de Personagem</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #2b2b2b;
-      color: #f2f2f2;
-    }
-    header {
-      background: #111;
-      padding: 16px;
-      text-align: center;
-      font-size: 24px;
-      letter-spacing: 2px;
-    }
-    .container {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 16px;
-      padding: 20px;
-    }
-    .box {
-      background: #3a3a3a;
-      border-radius: 8px;
-      padding: 16px;
-    }
-    h2 {
-      margin-top: 0;
-      border-bottom: 1px solid #555;
-      padding-bottom: 6px;
-    }
-    label {
-      display: block;
-      margin-top: 10px;
-      font-size: 14px;
-    }
-    input, textarea {
-      width: 100%;
-      margin-top: 4px;
-      padding: 8px;
-      border-radius: 4px;
-      border: none;
-      background: #222;
-      color: #fff;
-    }
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-    .atributos {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 8px;
-    }
-    button {
-      margin-top: 16px;
-      padding: 10px;
-      width: 100%;
-      border: none;
-      border-radius: 6px;
-      background: #e63946;
-      color: white;
-      font-size: 16px;
-      cursor: pointer;
-    }
-    button:hover {
-      background: #ff4d5a;
-    }
-    footer {
-      text-align: center;
-      padding: 10px;
-      font-size: 12px;
-      color: #aaa;
-    }
-  </style>
+<meta charset="UTF-8">
+<title>Gerenciador de Fichas RPG</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#1e1e1e;color:#eee;display:flex;height:100vh}
+
+/* MENU */
+#menu{width:220px;background:#111;padding:10px;display:flex;flex-direction:column}
+#menu h2{margin:0 0 10px 0;text-align:center}
+#listaFichas{flex:1;overflow-y:auto}
+.fichaBtn{background:#2b2b2b;border:none;color:#fff;padding:8px;margin-bottom:6px;width:100%;cursor:pointer;border-radius:4px;text-align:left}
+.fichaBtn:hover{background:#444}
+#novaFicha{background:#e63946;border:none;color:#fff;padding:10px;border-radius:6px;cursor:pointer}
+
+/* CONTEUDO */
+#conteudo{flex:1;padding:20px;overflow:hidden;display:grid;grid-template-columns:2fr 1fr;gap:16px}
+.box{background:#2b2b2b;padding:14px;border-radius:8px;overflow:auto}
+.box h3{margin-top:0;border-bottom:1px solid #555;padding-bottom:6px}
+
+input,textarea{width:100%;margin-top:6px;margin-bottom:10px;padding:6px;background:#111;border:none;color:#fff;border-radius:4px}
+textarea{min-height:80px;resize:vertical}
+
+.atributos{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+
+#exportar{background:#3a86ff;border:none;color:#fff;padding:10px;border-radius:6px;cursor:pointer;width:100%}
+</style>
 </head>
 <body>
 
-<header>FICHA DE PERSONAGEM</header>
+<div id="menu">
+  <h2>Fichas</h2>
+  <div id="listaFichas"></div>
+  <button id="novaFicha">+ Nova Ficha</button>
+</div>
 
-<div class="container">
+<div id="conteudo">
   <div class="box">
-    <h2>Dados Básicos</h2>
-    <label>Nome</label>
-    <input type="text">
-    <label>Idade</label>
-    <input type="number">
-    <label>Profissão</label>
-    <input type="text">
-    <label>Altura</label>
-    <input type="text">
+    <h3>Dados Básicos</h3>
+    <input id="nome" placeholder="Nome">
+    <input id="idade" placeholder="Idade">
+    <input id="profissao" placeholder="Profissão">
+    <input id="altura" placeholder="Altura">
 
-    <h2>História</h2>
-    <textarea></textarea>
+    <h3>História</h3>
+    <textarea id="historia"></textarea>
 
-    <h2>Dia do Apocalipse</h2>
-    <textarea></textarea>
+    <h3>Dia do Apocalipse</h3>
+    <textarea id="apocalipse"></textarea>
 
-    <h2>Habilidade Especial</h2>
-    <textarea></textarea>
+    <h3>Habilidade Especial</h3>
+    <textarea id="habilidade"></textarea>
   </div>
 
   <div class="box">
-    <h2>Atributos</h2>
+    <h3>Atributos</h3>
     <div class="atributos">
-      <label>FOR <input type="number"></label>
-      <label>AGI <input type="number"></label>
-      <label>CON <input type="number"></label>
-      <label>INT <input type="number"></label>
-      <label>PER <input type="number"></label>
-      <label>CAR <input type="number"></label>
-      <label>SOB <input type="number"></label>
-      <label>TEC <input type="number"></label>
+      <input id="for" placeholder="FOR">
+      <input id="agi" placeholder="AGI">
+      <input id="con" placeholder="CON">
+      <input id="int" placeholder="INT">
+      <input id="per" placeholder="PER">
+      <input id="car" placeholder="CAR">
+      <input id="sob" placeholder="SOB">
+      <input id="tec" placeholder="TEC">
     </div>
 
-    <h2>Proficiências</h2>
-    <textarea></textarea>
+    <h3>Proficiências</h3>
+    <textarea id="prof"></textarea>
 
-    <h2>Equipamentos</h2>
-    <textarea></textarea>
+    <h3>Equipamentos</h3>
+    <textarea id="equip"></textarea>
 
-    <button>Salvar Ficha</button>
+    <button id="exportar">Exportar PDF (em breve)</button>
   </div>
 </div>
 
-<footer>
-  feito no caos • sobrevivência mode on
-</footer>
+<script>
+let fichas = JSON.parse(localStorage.getItem('fichas')) || []
+let fichaAtual = null
+
+function salvar(){
+  if(fichaAtual===null) return
+  fichaAtual.nome = nome.value
+  fichaAtual.idade = idade.value
+  fichaAtual.profissao = profissao.value
+  fichaAtual.altura = altura.value
+  fichaAtual.historia = historia.value
+  fichaAtual.apocalipse = apocalipse.value
+  fichaAtual.habilidade = habilidade.value
+  fichaAtual.for = for.value
+  fichaAtual.agi = agi.value
+  fichaAtual.con = con.value
+  fichaAtual.int = int.value
+  fichaAtual.per = per.value
+  fichaAtual.car = car.value
+  fichaAtual.sob = sob.value
+  fichaAtual.tec = tec.value
+  fichaAtual.prof = prof.value
+  fichaAtual.equip = equip.value
+  localStorage.setItem('fichas',JSON.stringify(fichas))
+  renderMenu()
+}
+
+function carregar(f){
+  fichaAtual = f
+  nome.value=f.nome||''
+  idade.value=f.idade||''
+  profissao.value=f.profissao||''
+  altura.value=f.altura||''
+  historia.value=f.historia||''
+  apocalipse.value=f.apocalipse||''
+  habilidade.value=f.habilidade||''
+  for.value=f.for||''
+  agi.value=f.agi||''
+  con.value=f.con||''
+  int.value=f.int||''
+  per.value=f.per||''
+  car.value=f.car||''
+  sob.value=f.sob||''
+  tec.value=f.tec||''
+  prof.value=f.prof||''
+  equip.value=f.equip||''
+}
+
+function renderMenu(){
+  listaFichas.innerHTML=''
+  fichas.forEach(f=>{
+    const b=document.createElement('button')
+    b.className='fichaBtn'
+    b.textContent=f.nome||'Sem nome'
+    b.onclick=()=>carregar(f)
+    listaFichas.appendChild(b)
+  })
+}
+
+novaFicha.onclick=()=>{
+  const f={id:Date.now()}
+  fichas.push(f)
+  carregar(f)
+  salvar()
+}
+
+// autosave
+['input','keyup','change'].forEach(e=>{
+  document.addEventListener(e,()=>salvar())
+})
+
+renderMenu()
+if(fichas[0]) carregar(fichas[0])
+</script>
 
 </body>
 </html>
