@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Ficha de Personagem</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #2b2b2b;
+      color: #f2f2f2;
+    }
+    header {
+      background: #111;
+      padding: 16px;
+      text-align: center;
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+      padding: 20px;
+    }
+    .box {
+      background: #3a3a3a;
+      border-radius: 8px;
+      padding: 16px;
+    }
+    h2 {
+      margin-top: 0;
+      border-bottom: 1px solid #555;
+      padding-bottom: 6px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    input, textarea {
+      width: 100%;
+      margin-top: 4px;
+      padding: 8px;
+      border-radius: 4px;
+      border: none;
+      background: #222;
+      color: #fff;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .atributos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    button {
+      margin-top: 16px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      background: #e63946;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #ff4d5a;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<header>FICHA DE PERSONAGEM</header>
+
+<div class="container">
+  <div class="box">
+    <h2>Dados Básicos</h2>
+    <label>Nome</label>
+    <input type="text">
+    <label>Idade</label>
+    <input type="number">
+    <label>Profissão</label>
+    <input type="text">
+    <label>Altura</label>
+    <input type="text">
+
+    <h2>História</h2>
+    <textarea></textarea>
+
+    <h2>Dia do Apocalipse</h2>
+    <textarea></textarea>
+
+    <h2>Habilidade Especial</h2>
+    <textarea></textarea>
+  </div>
+
+  <div class="box">
+    <h2>Atributos</h2>
+    <div class="atributos">
+      <label>FOR <input type="number"></label>
+      <label>AGI <input type="number"></label>
+      <label>CON <input type="number"></label>
+      <label>INT <input type="number"></label>
+      <label>PER <input type="number"></label>
+      <label>CAR <input type="number"></label>
+      <label>SOB <input type="number"></label>
+      <label>TEC <input type="number"></label>
+    </div>
+
+    <h2>Proficiências</h2>
+    <textarea></textarea>
+
+    <h2>Equipamentos</h2>
+    <textarea></textarea>
+
+    <button>Salvar Ficha</button>
+  </div>
+</div>
+
+<footer>
+  feito no caos • sobrevivência mode on
+</footer>
+
+</body>
+</html>
